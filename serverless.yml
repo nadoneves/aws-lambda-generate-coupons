@@ -1,0 +1,16 @@
+service: voucher-generator-lambda
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: sa-east-1
+
+functions:
+  generator:
+    handler: handler.generator
+    memorySize: 2048
+    timeout: 900
+    environment:
+      STRING_MONGO:
+    tags:
+        datadog: monitored
