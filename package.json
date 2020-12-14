@@ -1,0 +1,21 @@
+{
+  "name": "voucher-generator-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {
+    "mongoose": "^5.11.7",
+    "voucher-code-generator": "^1.1.1"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "predeploy": "rm -rf node_modules && npm install --production --platform=linux --arch=x64",
+    "deploy": "serverless deploy -v",
+    "postdeploy": "rm -rf node_modules && npm install",
+    "test": "serverless invoke local --function generator --path $*"
+  },
+  "keywords": [],
+  "author": "Leonardo Neves <leo.mvhost@hotmail.com>",
+  "license": "ISC",
+}
